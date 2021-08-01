@@ -17,6 +17,7 @@ planets = [
     {"name": "Saturn", "position": 6, "moons":62},
     {"name": "Uranus", "position": 7, "moons":27},
     {"name": "Neptune", "position": 8, "moons":14},
+    {"name": "Pluto", "position": 9, "moons":0},
 ]
 
 @app.route('/planets/<id>')
