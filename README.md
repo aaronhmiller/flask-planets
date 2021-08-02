@@ -1,3 +1,4 @@
+[![Python application](https://github.com/aaronhmiller/flask-planets/actions/workflows/python-app.yaml/badge.svg)](https://github.com/aaronhmiller/flask-planets/actions/workflows/python-app.yaml)
 # Sample Flask App
 
 This application contains: one flask app in `app.py`. It serves up data about planets from [NASA data](https://solarsystem.nasa.gov/moons/in-depth/) at `/planets` and `/planets/<position>`.
