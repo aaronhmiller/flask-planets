@@ -25,7 +25,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install flask
     - name: Run app
-      run: FLASK_APP=app.py python -mflask run
+      run: FLASK_APP=app.py python -mflask run &
     - name: Test app
       run: |
         PLANET=$(docker run --network host saltaaron/just-httpie GET :5000/planets/3 | docker run -i --network host saltaaron/just-jq -r .name)
