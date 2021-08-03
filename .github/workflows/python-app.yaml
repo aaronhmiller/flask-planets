@@ -29,7 +29,7 @@ jobs:
     - name: Test app
       run: |
         PLANET=$(docker run --network host saltaaron/just-httpie GET :5000/planets/3 | docker run -i --network host saltaaron/just-jq -r .name)
-        if [ $PLANET != 'Saturn' ] ; then
+        if [ $PLANET != 'Earth' ] ; then
           echo "The expected planet was not returned. $PLANET was returned instead."
           exit 1;
         fi
