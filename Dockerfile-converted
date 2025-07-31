@@ -2,4 +2,5 @@ FROM cgr.dev/ay-ay-ron.dev/python:3-dev
 COPY app.py /
 ENV FLASK_APP=app.py
 RUN pip install --no-cache-dir -U Flask
-CMD ["flask","run","--host","0.0.0.0"]
+ENTRYPOINT []
+CMD ["python","-m","flask","run","--host","0.0.0.0"]
