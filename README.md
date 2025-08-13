@@ -11,7 +11,7 @@ FLASK_APP=app.py python -mflask run
 
 In its more portable form, run it as a Docker Container:
 ```
-docker run -d --name planets -p 5000:5000 saltaaron/flask-planets
+docker run -d --name planets -p 5000:5000 aaronhmiller/flask-planets
 ```
 
 ## Building
