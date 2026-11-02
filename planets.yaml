@@ -8,7 +8,7 @@ info:
     url: https://github.com/aaronhmiller/planets
     email: aaron@konghq.com
 servers:
-  - url: http://planets:5000
+  - url: http://planets:5001
     description: Sample project running locally
     x-kong-plugin-cors:
       config:

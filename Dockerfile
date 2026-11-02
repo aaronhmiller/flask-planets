@@ -2,4 +2,5 @@ FROM python:3-alpine
 COPY app.py /
 ENV FLASK_APP=app.py
 RUN pip install --no-cache-dir -U Flask
-CMD ["flask","run","--host","0.0.0.0"]
+EXPOSE 5001
+CMD ["flask","run","--host","0.0.0.0","--port","5001"]
