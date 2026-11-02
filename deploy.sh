@@ -7,4 +7,4 @@ elif [ "$2" = "rebuild" ]; then
 fi
 docker rm -f planets
 docker network create planets-network
-docker run -d --network planets-network --name planets -p 5001:5001 aaronhmiller/flask-planets:$1
+docker run -d --network planets-network --name planets -p 5001:5001 aaronhmiller/flask-planets:$1 flask run --host 0.0.0.0 --port 5001
