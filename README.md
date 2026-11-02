@@ -6,13 +6,16 @@ This application contains: one flask app in `app.py`. It serves up data about pl
 ## Running
 
 ```
-FLASK_APP=app.py python -mflask run
+FLASK_APP=app.py python -m flask run --port 5001
 ```
 
 In its more portable form, run it as a Docker Container:
 ```
-docker run -d --name planets -p 5000:5000 aaronhmiller/flask-planets
+docker build -t flask-planets:local .
+docker run -d --name planets -p 5001:5001 flask-planets:local
 ```
+
+The published image must be rebuilt with these changes before it can be used on port 5001.
 
 ## Building
 
