@@ -3,6 +3,9 @@
 
 name: Python application
 
+permissions:
+  contents: read
+
 on:
   push:
     branches: [ main ]
@@ -24,12 +27,12 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install flask
-    - name: Run and test app on port 5002
+    - name: Run and test app on port 5005
       run: |
-        FLASK_APP=app.py python -m flask run --port 5002 &
+        FLASK_APP=app.py python -m flask run --port 5005 &
         server_pid=$!
         trap 'kill "$server_pid" 2>/dev/null || true' EXIT
-        curl --fail --silent --show-error --retry 10 --retry-connrefused --retry-delay 1 http://127.0.0.1:5002/planets |
+        curl --fail --silent --show-error --retry 10 --retry-connrefused --retry-delay 1 http://127.0.0.1:5005/planets |
           python -c 'import json, sys; planets = json.load(sys.stdin); assert len(planets) == 8 and planets[2]["name"] == "Earth"'
-        curl --fail --silent --show-error http://127.0.0.1:5002/planets/3 |
+        curl --fail --silent --show-error http://127.0.0.1:5005/planets/3 |
           python -c 'import json, sys; planet = json.load(sys.stdin); assert planet["name"] == "Earth" and planet["position"] == 3'
